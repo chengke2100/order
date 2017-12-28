@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iotek.ssm.dao.OrderDao">
+	
+	
+	<select id="queryMaxId" resultType="Integer">
+		select max(odr_id) from sale_order
+	</select>
+	
+	<insert id="insertOrder" parameterType="Order">
+		insert into
+			sale_order (odr_customer_id,odr_customer_name,odr_deliver_addr,odr_order_date,odr_deliver_date,odr_status)
+		values
+			(#{cid},#{cname},#{address},#{orderDate},#{deliverDate},#{status})
+	</insert>
+	
+</mapper>

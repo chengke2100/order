@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iotek.ssm.dao.ProductDao">
+	
+	
+	<select id="queryAllProducts" resultType="Product">
+		select prod_id id,prod_name name,prod_price price from sale_product
+	</select>
+
+	<select id="queryProductById" resultType="Product">
+		select 
+			prod_id id,prod_name name,prod_price price 
+		from 
+			sale_product 
+		where 
+			prod_id=#{pid}
+	</select>
+	
+</mapper>

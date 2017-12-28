@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iotek.ssm.dao.OrderLineDao">
+	<insert id="insertOrderLine" parameterType="OrderLine">
+		insert into 
+			sale_order_line(odl_order_id,odl_product_name,odl_product_price,odl_product_count)
+		values
+			(#{oid},#{productName},#{productPrice},#{productNumber})
+	</insert>
+</mapper>
